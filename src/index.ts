@@ -1,3 +1,4 @@
+import { EstoqueVeiculos } from './classes/EstoqueVeiculos';
 import { GerenciadorVeiculos } from './classes/GerenciadorVeiculos';
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
@@ -25,12 +26,22 @@ const gerenciadorCarros = new GerenciadorVeiculos<Carro>();
 const gerenciadorMotos = new GerenciadorVeiculos<Moto>();
 
 gerenciadorCarros.addVeiculos(meuCarro);
-console.log(gerenciadorCarros.listarVeiculos);
+console.log(gerenciadorCarros.listarVeiculos());
 gerenciadorCarros.removeVeiculos("HB20");
-console.log(gerenciadorCarros.listarVeiculos);
+console.log(gerenciadorCarros.listarVeiculos());
 
 
 gerenciadorMotos.addVeiculos(minhaMoto);
-console.log(gerenciadorMotos.listarVeiculos);
+console.log(gerenciadorMotos.listarVeiculos());
 gerenciadorMotos.removeVeiculos("Xre");
-console.log(gerenciadorMotos.listarVeiculos);
+console.log(gerenciadorMotos.listarVeiculos());
+
+const estoque = new EstoqueVeiculos();
+
+estoque.adicionarEstoque("HB20",20);
+estoque.adicionarEstoque("Civic",15);
+estoque.adicionarEstoque("Xre",50);
+
+console.log("Estoque de HB20: ", estoque.consultaEstoque("HB20"));
+estoque.removerEstoque("HB20",3);
+console.log("Estoque após remoção: ",estoque.consultaEstoque("HB20"));
