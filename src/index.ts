@@ -4,6 +4,7 @@ import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
 import { Veiculo } from './interface/Veiculo';
 import { filtrarPorAno, filtrarPorMarca, filtrarPorModelo } from './utils/FiltroVeiculos';
+import { gerarRelatorio } from './utils/RelatorioVeiculos';
 
 const meuCarro: Carro = {
     modelo: "HB20",
@@ -57,3 +58,6 @@ const veiculos:Veiculo[] =[
 console.log("Veiculos de 2020: ", filtrarPorAno(veiculos,2020));
 console.log("Veiculos da marca Nissan: ",filtrarPorMarca(veiculos,"nissan"));
 console.log("Veiculos do modelo hb20: ", filtrarPorModelo(veiculos,"hb20"));
+
+
+console.log("Relatorio de veículos: \n",gerarRelatorio(veiculos));
