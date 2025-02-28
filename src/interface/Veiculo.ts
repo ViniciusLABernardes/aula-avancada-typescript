@@ -2,5 +2,5 @@
     modelo:string;
     marca:string;
     ano:number;
-    acelerar():string;
+   // acelerar():string;
 }
